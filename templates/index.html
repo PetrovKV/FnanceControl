@@ -1,0 +1,42 @@
+<!-- файл index.html -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Finance Control</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <header>
+        <h1>Finance Control</h1>
+    </header>
+    <main>
+        <section class="form-section">
+            <h2>Balance: {{ balance }}</h2>
+            <form action="/add_transaction" method="post">
+                <input type="text" name="description" placeholder="Description" required>
+                <input type="number" name="amount" placeholder="Amount" step="0.01" required>
+                <select name="type" required>
+                    <option value="income">Income</option>
+                    <option value="expense">Expense</option>
+                </select>
+                <button type="submit">Add Transaction</button>
+            </form>
+        </section>
+        <section class="list-section">
+            <h3>Transactions</h3>
+            <ul>
+                {% for item in data['transactions'] %}
+                    <li class="{{ item['type'] }}">
+                        <span>{{ item['timestamp'] }}</span> -
+                        <span>{{ item['description'] }}</span>:
+                        <span>{{ '+' if item['type'] == 'income' else '-' }}{{ item['amount'] }}</span>
+                    </li>
+                {% endfor %}
+            </ul>
+        </section>
+    </main>
+</body>
+</html>

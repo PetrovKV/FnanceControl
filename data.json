@@ -1,0 +1,1 @@
+{"transactions": [{"description": "Salary", "amount": 1000.0, "type": "income", "timestamp": "2024-12-18 21:51:31"}, {"description": "TV", "amount": 50.0, "type": "expense", "timestamp": "2024-12-18 21:51:43"}, {"description": "Electricity", "amount": 125.0, "type": "expense", "timestamp": "2024-12-18 21:52:08"}]}

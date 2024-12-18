@@ -1,0 +1,24 @@
+<!-- файл cashback.html -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cashback Recommendations</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <header>
+        <h1>Cashback Recommendations</h1>
+    </header>
+    <main>
+        <ul>
+            {% for category, percentage in recommendations %}
+                <li>{{ category }}: {{ percentage }}%</li>
+            {% endfor %}
+        </ul>
+        <a href="/">Back to Home</a>
+    </main>
+</body>
+</html>
