@@ -16,8 +16,8 @@
         <section class="form-section">
             <h2>Balance: {{ balance }}</h2>
             <form action="/add_transaction" method="post">
-                <input class="field" type="text" name="description" placeholder="Description" required>
-                <input class="field" type="number" name="amount" placeholder="Amount" step="0.01" required>
+                <input type="text" name="description" placeholder="Description" required>
+                <input type="number" name="amount" placeholder="Amount" step="0.01" required>
                 <select name="type" required>
                     <option value="income">Income</option>
                     <option value="expense">Expense</option>

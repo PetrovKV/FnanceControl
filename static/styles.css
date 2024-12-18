@@ -29,12 +29,24 @@ main {
     border-radius: 8px;
 }
 
+section {
+    padding: 1.5rem; /* Увеличиваем отступы внутри секции */
+    margin-bottom: 2rem;
+    background: #fff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    max-width: 400px;
+    text-align: center;
+    box-sizing: border-box;
+}
+
+
 h1, h2, h3 {
     margin-bottom: 1rem;
 }
 
 
-.field, form input, form select, form button {
+form input, form select, form button {
     display: block;
     width: 100%;
     padding: 0.5rem;
@@ -49,6 +61,17 @@ form button {
     border: none;
     cursor: pointer;
 }
+
+input[type="text"], input[type="number"] {
+    display: block;
+
+    padding: 0.5rem;
+    margin-bottom: 0.5rem;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box; /* Учитывает padding в ширине элемента */
+}
+
 
 form button:hover {
     background-color: #4500b5;
